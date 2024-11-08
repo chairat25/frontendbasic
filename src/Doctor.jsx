@@ -4,7 +4,8 @@ import Select from 'react-select';
 import './Doctor.css';
 import AppointmentCard from './AppointmenCard';
 import Modal from './Modal';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faClock } from '@fortawesome/free-solid-svg-icons';
 
 const doctors = [
     {
@@ -157,7 +158,7 @@ function Doctor() {
                     <span style={{ marginLeft: '10px' }}>ทันตแพทย์</span>
                     <img src={selectedImage} alt="Doctor" style={{ width: 50, height: 50, borderRadius: '50%', marginRight: '10px' }} />
                 </div>
-                <div className="header-bomttom-doctor">เวลาเข้าทำงาน 09:00 - 19:00 น. </div>
+                <div className="header-bomttom-doctor"> <FontAwesomeIcon icon={faClock} style={{ marginRight: 10 }} /> เวลาเข้าทำงาน 09:00 - 19:00 น. </div>
                 <div className="slots">
                     {timeSlots.map((time, index) => {
                         const appointmentAtThisSlot = filteredAppointments.find(appt => appt.time.startsWith(time));
